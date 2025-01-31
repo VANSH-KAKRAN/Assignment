@@ -1,23 +1,23 @@
-
-
 import React, { useState } from "react";
 import { Button, Alert, Modal } from "react-bootstrap";
 import Confetti from "react-confetti";
-import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";  // Social Media Icons
+import { FaFacebook, FaTwitter, FaLinkedin } from "react-icons/fa";
 import "./ChatbotIntegration.css";
 
 const ChatbotIntegration = () => {
   const [integrationStatus, setIntegrationStatus] = useState(null);
   const [showInstructionsModal, setShowInstructionsModal] = useState(false);
   const [showDeveloperEmailModal, setShowDeveloperEmailModal] = useState(false);
-  const [showConfetti, setShowConfetti] = useState(false); // State to control Confetti display
-  const [email, setEmail] = useState(""); // For email input
-  const [url, setUrl] = useState(""); // For ERB URL input
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [email, setEmail] = useState("");
+  const [url, setUrl] = useState("");
   const [generatedScript, setGeneratedScript] = useState("");
 
   const generateScriptCode = () => {
     if (url) {
-      const scriptCode = `<script src="https://beyondchats.com/chatbot.js?url=${encodeURIComponent(url)}"></script>`;
+      const scriptCode = `<script src="https://beyondchats.com/chatbot.js?url=${encodeURIComponent(
+        url
+      )}"></script>`;
       setGeneratedScript(scriptCode);
     } else {
       alert("Please enter a valid website URL.");
@@ -30,34 +30,31 @@ const ChatbotIntegration = () => {
   };
 
   const handleTestIntegration = () => {
-    // Simulate integration test (success/failure)
-
-
     setIntegrationStatus("success");
-    setShowConfetti(true); // Show confetti on success
+    setShowConfetti(true);
 
     setTimeout(() => {
-      setShowConfetti(false); // Hide confetti after 5 seconds
+      setShowConfetti(false);
     }, 5000);
   };
 
   const handleTestChatbot = () => {
-    alert("Testing chatbot... (Redirect to client's website with dummy chatbot)");
-  };
-
-  const handleOpenClientWebsite = () => {
-    window.open(
-      `https://${url}.com`, // Replace with actual client's website URL
-      "_blank"
+    alert(
+      "Testing chatbot... (Redirect to client's website with dummy chatbot)"
     );
   };
 
+  const handleOpenClientWebsite = () => {
+    window.open(`https://${url}.com`, "_blank");
+  };
+
   const handleInstructionsModalClose = () => setShowInstructionsModal(false);
-  const handleDeveloperEmailModalClose = () => setShowDeveloperEmailModal(false);
+  const handleDeveloperEmailModalClose = () =>
+    setShowDeveloperEmailModal(false);
 
   const handleEmailSubmit = () => {
     alert(`Instructions have been sent to ${email}`);
-    setShowDeveloperEmailModal(false); // Close modal after submission
+    setShowDeveloperEmailModal(false);
   };
 
   return (
@@ -70,25 +67,34 @@ const ChatbotIntegration = () => {
           </Button>
         </div>
 
-        {/* Buttons for main actions */}
         <div className="action-buttons">
-          <Button variant="primary" onClick={handleTestChatbot} className="action-button">
+          <Button
+            variant="primary"
+            onClick={handleTestChatbot}
+            className="action-button"
+          >
             Test Chatbot
           </Button>
-          <Button variant="secondary" className="action-button" onClick={handleOpenClientWebsite}>
+          <Button
+            variant="secondary"
+            className="action-button"
+            onClick={handleOpenClientWebsite}
+          >
             Client Web
           </Button>
-          <Button variant="info" onClick={handleTestIntegration} className="action-button">
+          <Button
+            variant="info"
+            onClick={handleTestIntegration}
+            className="action-button"
+          >
             Test Integration
           </Button>
         </div>
       </div>
 
-      {/* "Integrate on your website" section */}
       <div className="border p-4 rounded-lg shadow bg-white Integrate ">
         <h2 className="text-xl font-semibold">Integrate on Your Website</h2>
 
-        {/* URL input */}
         <div className="form-group">
           <label htmlFor="websiteUrl">Enter Website URL:</label>
           <input
@@ -108,7 +114,6 @@ const ChatbotIntegration = () => {
           </Button>
         </div>
 
-        {/* Display generated script */}
         {generatedScript && (
           <div className="mt-3">
             <h4>Generated Script Code:</h4>
@@ -139,7 +144,6 @@ const ChatbotIntegration = () => {
         </div>
       </div>
 
-      {/* Integration Test */}
       <Button
         variant="success"
         onClick={handleTestIntegration}
@@ -148,34 +152,39 @@ const ChatbotIntegration = () => {
         Test Integration
       </Button>
 
-      {/* Confetti and success UI */}
       {integrationStatus === "success" && (
         <div className="mt-4 succesfail">
           {showConfetti && <Confetti />}
-          <Alert variant="success">
-            Chatbot integration was successful!
-          </Alert>
-          <Button style={{backgroundColor:"black"}} className="mt-3" variant="primary">
+          <Alert variant="success">Chatbot integration was successful!</Alert>
+          <Button
+            style={{ backgroundColor: "black" }}
+            className="mt-3"
+            variant="primary"
+          >
             Explore Admin Panel
           </Button>
-          <Button  style={{backgroundColor:"black"}}  className="mt-3" variant="secondary">
+          <Button
+            style={{ backgroundColor: "black" }}
+            className="mt-3"
+            variant="secondary"
+          >
             Start Talking to Your Chatbot
           </Button>
-          <div className="social-media-buttons mt-3">
+          
+          <div className="social-media-buttons ">
             <Button variant="outline-primary" className="mr-2">
-              <FaFacebook /> Share on Facebook
+              <FaFacebook /> <span className="shareOn"> Share on Facebook</span> 
             </Button>
             <Button variant="outline-info" className="mr-2">
-              <FaTwitter /> Share on Twitter
+              <FaTwitter /><span className="shareOn"> Share on Twitter</span> 
             </Button>
             <Button variant="outline-success">
-              <FaLinkedin /> Share on LinkedIn
+              <FaLinkedin /><span className="shareOn"> Share on Linkedin</span> 
             </Button>
           </div>
         </div>
       )}
 
-      {/* Modal for instructions */}
       <Modal show={showInstructionsModal} onHide={handleInstructionsModalClose}>
         <Modal.Header closeButton>
           <Modal.Title>Integration Instructions</Modal.Title>
@@ -183,7 +192,10 @@ const ChatbotIntegration = () => {
         <Modal.Body>
           <p>Follow these steps to integrate the chatbot:</p>
           <pre>{`<script src="https://beyondchats.com/chatbot.js?url=${url}"></script>`}</pre>
-          <p>Copy the above code into the <code>&lt;head&gt;</code> section of your website.</p>
+          <p>
+            Copy the above code into the <code>&lt;head&gt;</code> section of
+            your website.
+          </p>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleInstructionsModalClose}>
@@ -192,7 +204,6 @@ const ChatbotIntegration = () => {
         </Modal.Footer>
       </Modal>
 
-      {/* Modal for sending email instructions to developer */}
       <Modal
         show={showDeveloperEmailModal}
         onHide={handleDeveloperEmailModalClose}

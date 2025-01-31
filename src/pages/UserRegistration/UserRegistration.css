@@ -1,9 +1,7 @@
-body{
+body {
   margin: 0;
 }
 
-
-/* General styles for the page */
 .registration-container {
   background-color: #f7f9fc;
   min-height: 100vh;
@@ -23,23 +21,19 @@ body{
 }
 
 .heading {
-  /* font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px; */
   font-size: 27px;
   color: #00336a;
   margin-bottom: 20px;
   font-weight: 600;
 }
 
-/* Style for the input fields */
 .input-field {
-    border-radius: 3px;
-    margin-bottom: 15px;
-    padding: 12px;
-    font-size: 1rem;
-    border: 2px solid #c2c2c2;
-    transition: border-color 0.3s;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #c2c2c2;
+  transition: border-color 0.3s;
 }
 
 .input-field:focus {
@@ -47,7 +41,6 @@ body{
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Button styles */
 .submit-btn {
   width: 100%;
   padding: 12px;
@@ -82,7 +75,6 @@ body{
   background-color: #f8f9fa;
 }
 
-/* Message styles */
 .alert {
   margin-top: 20px;
   font-size: 0.9rem;
