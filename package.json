@@ -1,5 +1,5 @@
 {
-  "homepage": "https://VANSH-KAKRAN.github.io/BeyondChats_Assignment",
+  "homepage": "https://VANSH-KAKRAN.github.io/Assignment",
   "name": "frontend",
   "private": true,
   "version": "0.0.0",
@@ -9,8 +9,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist"
+    "deploy":"gh-pages -d build"
   },
   "dependencies": {
     "@shadcn/ui": "^0.0.4",
