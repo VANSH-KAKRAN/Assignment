@@ -51,11 +51,11 @@ This project is a chatbot integration UI for BeyondChats, built using React.js. 
 git clone https://github.com/VANSH-KAKRAN/BeyondChats.git
 cd BeyondChats
 npm install
-npm start
+npm run dev
 ```
 
 ## Deployment
 This project is deployed using GitHub Actions and GitHub Pages. Any push to the `main` branch triggers an automated deployment.
 
- Link to the live website -
+ Link to the live website - https://vansh-kakran.github.io/Assignment/
 
