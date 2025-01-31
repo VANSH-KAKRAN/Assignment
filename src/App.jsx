@@ -10,14 +10,14 @@ import ChatbotIntegrationTesting from "./pages/ChatbotIntegrationTesting/Chatbot
 
 function App() {
   return (
-    <Router>
+   
       <Routes>
         <Route path="/" element={<UserRegistration />} />
                 <Route path="/setup" element={<SetupOrganisation />} />
                 <Route path="/bot" element={<ChatbotIntegrationTesting />} />
    
       </Routes>
-    </Router>
+
   );
 }
 
