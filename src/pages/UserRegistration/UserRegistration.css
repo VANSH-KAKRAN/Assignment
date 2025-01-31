@@ -1,3 +1,8 @@
+body{
+  margin: 0;
+}
+
+
 /* General styles for the page */
 .registration-container {
   background-color: #f7f9fc;

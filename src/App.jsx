@@ -6,7 +6,9 @@ import Home from "./pages/Home/Home";
 // import Register from './pages/Register';
 import UserRegistration from "./pages/UserRegistration/UserRegistration";
 import SetupOrganisation from "./pages/SetupOrganisation/SetupOrganisation";
-import ChatbotIntegrationTesting from "./pages/ChatbotIntegrationTesting/ChatbotIntegrationTesting"
+import ChatbotIntegrationTesting from "./pages/ChatbotIntegrationTesting/ChatbotIntegrationTesting";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
