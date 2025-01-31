@@ -16,7 +16,7 @@ import App from './App';
 import {HashRouter} from "react-router-dom"
 
 ReactDOM.render(
-  <HashRouter basename="/Assignment">
+  <HashRouter>
     <App />
   </HashRouter>,
   document.getElementById('root')
